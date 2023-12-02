@@ -65,12 +65,16 @@
               <img src="images/slider-10.png" alt="slider" class="img-fluid" />
             </div>
           </div>
-          <!-- If we need pagination -->
 
-          <!-- <div class="swiper-pagination"></div> -->
           <!-- If we need navigation buttons -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
+          <!-- If we need pagination -->
+
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <div class="slider-container">
+          slide <span id="slider-number">1/10</span>
         </div>
       </div>
     </div>
@@ -89,9 +93,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
+      const sliderElement = document.getElementById("slider-number");
       var mySwiper = new Swiper(".swiper-container", {
         // Optional parameters
-        loop: true,
+        loop: false,
         slidesPerView: 3,
         speed: 1000,
         centeredSlides: true,
@@ -104,6 +109,16 @@
           modifier: 1,
           slideShadows: false,
         },
+        on: {
+          slideChange: function () {
+            const index_currentSlide = this.realIndex;
+            const currentSlide = this.slides[index_currentSlide];
+            currentSlide.getAttribute("aria-label");
+            sliderElement.innerHTML = currentSlide
+              .getAttribute("aria-label")
+              .replace(/ /g, "");
+          },
+        },
         // coverflow: {
         //   rotate: 0,
         //   stretch: 0,
@@ -115,6 +130,10 @@
         // If we need pagination
         // pagination: {
         //   el: ".swiper-pagination",
+        //   clickable: true,
+        //   renderBullet: function (index, className) {
+        //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+        //   },
         // },
         navigation: {
           nextEl: ".swiper-button-next",

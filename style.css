@@ -64,6 +64,8 @@ body {
 
 .main__container {
     width: 100%;
+    position: relative;
+    text-align: center;
 }
 
 .footer {
@@ -93,6 +95,20 @@ body {
     max-height: 100%;
     width: 100%;
     transform: scale(2) !important;
+    position: relative;
+}
+
+.swiper-slide-visible.swiper-slide-next::after,
+.swiper-slide-visible.swiper-slide-prev::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff61;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .swiper-wrapper {
@@ -115,6 +131,28 @@ body {
 .swiper-button-prev {
     font-weight: bold;
     color: #1d2d51 !important;
+}
+
+.slider-container {
+    position: absolute;
+    bottom: -110%;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: -100% !important;
+}
+
+.swiper-pagination-bullet {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 /* loader section*/
@@ -262,6 +300,13 @@ body {
     color: black;
     font-size: 27px;
     line-height: 29px;
+}
+
+
+@media only screen and (max-width: 920px) and (orientation: portrait) {
+    html {
+        font-size: 8px;
+    }
 }
 
 @media only screen and (min-width: 200px) and (orientation: landscape) {

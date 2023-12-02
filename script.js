@@ -28,3 +28,4 @@ document.addEventListener("DOMContentLoaded", () => {
     bodyElement.classList.add("loaded");
   }, 1000);
 });
+
