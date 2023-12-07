@@ -36,15 +36,14 @@ body {
 
 .header__logoImgContainer {
     text-align: end;
-    height: 100%;
+    height: 130%;
     display: flex;
     align-items: end;
     justify-content: end;
-    padding-right: 5%;
 }
 
 .header__logoImgContainer img {
-    width: 45%;
+    width: 53%;
 }
 
 .header__topImgContainer {
