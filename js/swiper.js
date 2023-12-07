@@ -1,4 +1,4 @@
-const sliderElement = document.getElementById("slider-number");
+// const sliderElement = document.getElementById("slider-number");
 let mySwiper = new Swiper(".swiper-container", {
   // Optional parameters
   loop: false,
@@ -14,16 +14,17 @@ let mySwiper = new Swiper(".swiper-container", {
     modifier: 1,
     slideShadows: false,
   },
-  on: {
-    slideChange: function () {
-      const index_currentSlide = this.realIndex;
-      const currentSlide = this.slides[index_currentSlide];
-      currentSlide.getAttribute("aria-label");
-      sliderElement.innerHTML = currentSlide
-        .getAttribute("aria-label")
-        .replace(/ /g, "");
-    },
-  },
+  // show silde number
+  //   on: {
+  //     slideChange: function () {
+  //       const index_currentSlide = this.realIndex;
+  //       const currentSlide = this.slides[index_currentSlide];
+  //       currentSlide.getAttribute("aria-label");
+  //       sliderElement.innerHTML = currentSlide
+  //         .getAttribute("aria-label")
+  //         .replace(/ /g, "");
+  //     },
+  //   },
   // If we need pagination
   // pagination: {
   //   el: ".swiper-pagination",
